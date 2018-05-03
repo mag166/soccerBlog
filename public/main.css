@@ -49,3 +49,10 @@ h1{
       transform: scale(1);
     }
   }
+
+  body{
+    background-image: url(/images/images.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat
+
+  }

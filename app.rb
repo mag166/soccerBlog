@@ -7,10 +7,25 @@ require 'pry'
 
 enable :sessions
 
-set :database, "sqlite3:app.db"
+configure :development do
+  set :database, "sqlite3:app.db"
+end
+
+# this will ensure this will only be used on production
+configure :production do
+  # this environment variable is auto generated/set by heroku
+  #   check Settings > Reveal Config Vars on your heroku app admin panel
+  set :database, ENV["DATABASE_URL"]
+end
+
+
 
 get "/" do
-erb :index
+  Post.find_each do |post|
+    puts post.content
+  end
+    erb :index
+
 end
 #CODE SOURCED FROM ORLANDO EXAMPLE
 get "/sign-in" do
@@ -63,4 +78,4 @@ get "/sign-in" do
 
 
 
-  binding.pry
+  # binding.pry
