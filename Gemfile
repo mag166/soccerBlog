@@ -7,6 +7,8 @@ gem "sinatra-activerecord"
 gem "rake"
 gem "pry"
 
+ruby "2.4.1"
+
 group :development do
     # our sqlite3 gem will only be used locally
     #   the sqlite3 gem is an adapter for sqlite
