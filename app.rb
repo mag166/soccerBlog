@@ -21,9 +21,7 @@ end
 
 
 get "/" do
-  Post.find_each do |post|
-    puts post.content
-  end
+    @posts = Post.all
     erb :index
 
 end
@@ -50,6 +48,12 @@ get "/sign-in" do
 
   get "/sign-up" do
     erb :sign_up
+  end
+
+  get "/posts/:id" do
+    @user = User.find(params[:id])
+    @posts = User.find(params[:id]).posts
+    erb:user_posts
   end
   
   post "/sign-up" do

@@ -1,6 +1,4 @@
-h1{
-    color: blue
-}
+
 
 /* CODE BELOW SOURCED FROM ORLANDO EXAMPLE */
 .flash {
@@ -52,7 +50,30 @@ h1{
 
   body{
     background-image: url(/images/images.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
   }
+
+  #postContainer{
+    position: relative;
+    top:70px;
+    width: 70%;
+  }
+
+  #postImage{
+    width:60%;
+    padding:20px;
+  }
+
+  .centerText{
+    text-align: center;
+    padding: 20px;
+  }
+
+
+
+  /* h2{
+    color:green;
+  } */

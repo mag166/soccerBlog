@@ -3,6 +3,7 @@ class CreatePostsTable < ActiveRecord::Migration[5.2]
     create_table :posts do |t|
       t.string :title
       t.string :content
+      t.string:img_link
       t.datetime :created_at
       t.datetime :updated_at 
       t.integer :user_id
