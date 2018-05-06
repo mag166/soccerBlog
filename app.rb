@@ -80,6 +80,20 @@ get "/sign-in" do
     redirect "/"
   end
 
+  get "/new-post" do
+    erb :new_post
+  end
+
+  post "/new-post" do
+    @post = Post.create(
+      title: params[:title],
+      content: params[:content],
+      img_link: params[:img_link],
+      user_id: session[:user_id]
+    )
+
+    redirect "/"
+  end
 
 
   # binding.pry
