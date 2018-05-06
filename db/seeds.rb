@@ -1,7 +1,7 @@
 require "./models"
 
-User.create(username: "orlandoc", password: "12345", email:"orlando@nycda.com", birthday:Time.now)
-User.create(username: "minhalg", password: "12345", email:"mag166@case.edu", birthday:Time.now)
+User.create(username: "orlandoc", password: "12345",firstName:"Orlando",lastName:"Caraballo", email:"orlando@nycda.com", birthday:Time.now)
+User.create(username: "minhalg", password: "12345", firstName:"Minhal",lastName:"Gardezi",email:"mag166@case.edu", birthday:Time.now)
 
 Post.create(title:"Arsenal must clear the rubble of Arsene Wenger's fallen empire", content:"Cold reality is now staring Arsenal in the face. The Wenger era has three games left to run -- Burnley at home, Leicester away and then the long goodbye at Huddersfield -- and the future must now be about the rebuilding job that lies ahead for the club and whomever they appoint to clear the rubble of Wenger's fallen empire.",img_link:"https://www.ghanacrusader.com/wp-content/uploads/2018/04/wenger-out-arsene-wenger-1.jpg", user_id:1)
 Post.create(title:"Falcao is a crappy striker", content:"No news here. Falcao is so shitty nobody should ever sign him.", img_link:"http://i.dailymail.co.uk/i/pix/2015/01/12/2499863B00000578-2907273-image-m-7_1421098835338.jpg", user_id:2)

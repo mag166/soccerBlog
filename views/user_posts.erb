@@ -1,47 +1,65 @@
 <div class="centerText">
     <%if session[:user_id] != @user.id%>
-        <h2><%=@user.username%>'s Posts</h2>
-    <%else%>
-        <h2>Your Posts</h2>
-    <%end%>
+        <h2>
+            <%=@user.username%>'s Profile</h2>
+        <%else%>
+            <h2>Your Profile</h2>
+            <%end%>
 </div>
-
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-
-<%@posts.reverse.each do |post| %>
-
-<div class="container" id="postContainer">
-    <div class="row">
-        <div class="col-sm">
-            <div class="jumbotron">
-                <h2 class="display-5"><%=post.title%></h2>
-                <hr class="my-4">
-                <p><%=post.content%></p>
-                <div class="text-center">
-                    <img class="rounded" id="postImage" src="<%=post.img_link%>"><br>
+<div class="container">
+    <div class=row>
+        <div class="col-sm" align=center>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%=@user.username%>
+                    </h5>
                 </div>
-                <a class="btn btn-primary btn-sm" href=/posts/<%=post.user.id%> role="button"><%=post.user.username%></a>
-
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Name: <%="#{@user.firstName} #{@user.lastName}"%></li>
+                    <li class="list-group-item">Birthday: <%=@user.birthday%> </li>
+                    <li class="list-group-item">Email: <%=@user.email%></li>
+                </ul>
+                <% if session[:user_id] == @user.id %>
+                    <div class="card-body">
+                        <a href="#" class="card-link">Edit Profile</a>
+                    </div>
+                <%end%>
             </div>
-
         </div>
     </div>
 </div>
 
-<% end %>
+<%@posts.reverse.each do |post| %>
 
+    <div class="container" id="postContainer">
+        <div class="row">
+            <div class="col-sm">
+                <div class="jumbotron">
+                    <h2 class="display-5">
+                        <%=post.title%>
+                    </h2>
+                    <%if session[:user_id] == post.user.id%>
+                        <a href=<%="/delete-post/#{post.id}"%>type="button" id="closeButton" class="close" aria-label="Close">
+                          <span aria-hidden="true">&times;</span> 
+                        </a>
+                    <%end%>
+                    <hr class="my-4">
+                    <p>
+                        <%=post.content%>
+                    </p>
+                    <div class="text-center">
+                        <img class="rounded" id="postImage" src="<%=post.img_link%>">
+                        <br>
+                    </div>
+                    <a class="btn btn-primary btn-sm" href=/posts/<%=post.user.id%> role="button">
+                        <%=post.user.username%>
+                    </a>
 
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <% end %>

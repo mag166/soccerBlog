@@ -58,6 +58,8 @@ get "/sign-in" do
   
   post "/sign-up" do
     @user = User.create(
+      firstName: params[:firstName],
+      lastName: params[:lastName],
       username: params[:username],
       password: params[:password],
       birthday: params[:birthday],
