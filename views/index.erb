@@ -4,7 +4,10 @@
     <div class="row">
         <div class="col-sm">
             <div class="jumbotron">
-                <h2 class="display-5"><%=post.title%></h2>
+                <div class="centerText">
+                    <h2 class="display-5"><%=post.title%></h2>
+                </div>
+                
                 <%if session[:user_id] == post.user.id%>
                 <a href=<%="/delete-post/#{post.id}"%>type="button" id="closeButton" class="close" aria-label="Close">
                     <span aria-hidden="true">&times;</span> 
@@ -15,7 +18,7 @@
                 <div class="text-center">
                     <img class="rounded" id="postImage" src="<%=post.img_link%>"><br>
                 </div>
-                <a class="btn btn-primary btn-sm" href=/posts/<%=post.user.id%> role="button"><%=post.user.username%></a>
+                <a class="btn btn-primary btn-sm" id="userLink" href=/posts/<%=post.user.id%> role="button"><%=post.user.username%></a>
                 
             </div>
 

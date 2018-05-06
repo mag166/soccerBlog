@@ -74,7 +74,12 @@
 
   #closeButton{
     position: relative;
-    top:-80px;
+    top:-90px;
+  }
+
+  #userLink{
+    position: relative;
+    top:20px;
   }
 
 
