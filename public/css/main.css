@@ -72,8 +72,13 @@
     padding: 20px;
   }
 
+  #closeButton{
+    position: relative;
+    top:-80px;
+  }
 
 
-  /* h2{
+/* 
+  h2{
     color:green;
   } */

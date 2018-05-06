@@ -96,4 +96,10 @@ get "/sign-in" do
   end
 
 
+  get "/delete-post/:id" do
+    post = Post.find(params[:id])
+    Post.destroy(post.id)
+    redirect "/"
+  end
+
   # binding.pry
