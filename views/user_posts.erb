@@ -32,34 +32,44 @@
 
 <%@posts.reverse.each do |post| %>
 
-    <div class="container" id="postContainer">
-        <div class="row">
-            <div class="col-sm">
-                <div class="jumbotron">
+<div class="container" id="postContainer">
+    <div class="row">
+        <div class="col-sm">
+            <div class="jumbotron">
                 <div class="centerText">
                     <h2 class="display-5"><%=post.title%></h2>
                 </div>
-                    <%if session[:user_id] == post.user.id%>
-                        <a href=<%="/delete-post/#{post.id}"%>type="button" id="closeButton" class="close" aria-label="Close">
-                          <span aria-hidden="true">&times;</span> 
-                        </a>
-                    <%end%>
-                    <hr class="my-4">
-                    <p>
-                        <%=post.content%>
-                    </p>
-                    <div class="text-center">
-                        <img class="rounded" id="postImage" src="<%=post.img_link%>">
-                        <br>
-                    </div>
-                    <a class="btn btn-primary btn-sm" id="userLink" href=/posts/<%=post.user.id%> role="button">
-                        <%=post.user.username%>
-                    </a>
-
+                
+                <%if session[:user_id] == post.user.id%>
+                <a data-toggle="modal" data-target="#exampleModal"  type="button" id="closeButton" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span> 
+                </a>
+                <%end%>
+                <hr class="my-4">
+                <p><%=post.content%></p>
+                <div class="text-center">
+                    <img class="rounded" id="postImage" src="<%=post.img_link%>"><br>
                 </div>
-
+                <a class="btn btn-primary btn-sm" id="userLink" href=/posts/<%=post.user.id%> role="button"><%=post.user.username%></a>
+                
             </div>
+
         </div>
     </div>
+</div>
 
-    <% end %>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        Are you sure you want to delte this post?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a type="button" href=<%="/delete-post/#{post.id}"%> class="btn btn-primary">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% end %>
