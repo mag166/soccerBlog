@@ -104,4 +104,9 @@ get "/sign-in" do
     redirect "/"
   end
 
+  get "/edit-profile" do
+    @user = User.find(session[:user_id])
+    erb:edit_profile
+  end
+
   # binding.pry

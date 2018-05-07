@@ -1,0 +1,18 @@
+<div class="centerText">
+  <h1>Edit Profile</h1>
+</div>
+<div class="container">
+<form action="/sign-up" method="post">
+  <input class="form-control" value=<%=@user.username%> type="text" name="username" id="username" placeholder="Username"><br>
+  <input class="form-control" value=<%=@user.password%> type="password" name="password" id="password" placeholder="Password"><br>
+  <input class="form-control" value=<%=@user.firstName%> type="text" name="firstName" id="firstName" placeholder="First Name"><br>
+  <input class="form-control" value=<%=@user.lastName%> type="text" name="lastName" id="lastName" placeholder="Last Name"><br>
+
+  <input class="form-control" value=<%=@user.email%> type="text" name="email" id="email" placeholder="Email"><br>
+  <input class="form-control" value=<%=@user.birthday%> type="date" name="birthday" id="birthday" placeholder="Birthday"><br>
+  <input class="btn btn-primary" type="submit" value="Submit">
+</form><br>
+
+<a href="#" class="btn btn-danger" role="button">Delete Profile</a>
+
+</div> 
