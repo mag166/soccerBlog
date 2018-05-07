@@ -104,6 +104,12 @@ get "/sign-in" do
     redirect "/"
   end
 
+  get "/delete-post-profile/:id" do
+    post = Post.find(params[:id])
+    Post.destroy(post.id)
+    redirect "/posts/#{session[:user_id]}"
+  end
+
   get "/edit-profile" do
     @user = User.find(session[:user_id])
     erb:edit_profile

@@ -13,6 +13,21 @@
   <input class="btn btn-primary" type="submit" value="Submit">
 </form><br>
 
-<a href="#" class="btn btn-danger" role="button">Delete Profile</a>
+<a data-toggle="modal" data-target="#exampleModal"  class="btn btn-danger" role="button">Delete Profile</a>
 
 </div> 
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        Are you sure you want to delte your Profile?
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-secondary" role="button" data-dismiss="modal">Close</a>
+        <a role="button" class="btn btn-primary" href=<%="/delete-profile"%>>Delete Post</a>
+      </div>
+    </div>
+  </div>
+</div>
