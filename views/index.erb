@@ -1,5 +1,5 @@
 <%@posts.reverse.each do |post| %>
-
+<%if post.user != nil%>
 <div class="container" id="postContainer">
     <div class="row">
         <div class="col-sm">
@@ -42,5 +42,6 @@
   </div>
 </div>
 
+<% end %>
 <% end %>
 

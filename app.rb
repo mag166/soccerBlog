@@ -116,14 +116,15 @@ get "/sign-in" do
   end
 
   get "/delete-profile" do
-    user = User.find(session[:user_id])
+    @user = User.find(session[:user_id])
     posts = Post.all
     for post in posts
-      if post.id = session[:user_id]
+      if post.id == User.find(session[:user_id]).id
         Post.destroy(post.id)
       end
     end
-    user.destroy
+    @destroy = @user.destroy
+    @destroy
     session[:user_id] = nil
     redirect "/"
   end
