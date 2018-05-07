@@ -124,7 +124,6 @@ get "/sign-in" do
       end
     end
     @destroy = @user.destroy
-    @destroy
     session[:user_id] = nil
     redirect "/"
   end
