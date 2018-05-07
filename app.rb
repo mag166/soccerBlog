@@ -115,4 +115,16 @@ get "/sign-in" do
     erb:edit_profile
   end
 
+  post "/edit-profile" do
+    @user = User.update(
+      firstName: params[:firstName],
+      lastName: params[:lastName],
+      username: params[:username],
+      password: params[:password],
+      birthday: params[:birthday],
+      email: params[:email]
+    )
+
+    redirect "/posts/#{session[:user_id]}"
+  end
   # binding.pry
