@@ -115,6 +115,21 @@ get "/sign-in" do
     erb:edit_profile
   end
 
+  get "/delete-profile" do
+    user = User.find(session[:user_id])
+    posts = Post.all
+    for post in posts
+      if post.id = session[:user_id]
+        Post.destroy(post.id)
+      end
+    end
+    user.destroy
+    session[:user_id] = nil
+    redirect "/"
+  end
+
+
+
   post "/edit-profile" do
     @user = User.update(
       firstName: params[:firstName],
