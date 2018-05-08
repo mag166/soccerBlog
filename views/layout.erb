@@ -30,7 +30,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <% if session[:user_id] %>
-              <a class="nav-item nav-link" href=<%="/posts/#{session[:user_id]}"%>>My Posts</a>
+              <a class="nav-item nav-link" href=<%="/posts/#{session[:user_id]}"%>>My Profile</a>
               <a class="nav-item nav-link" href=<%="/new-post"%>>Create Post</a>
               <a class="nav-item nav-link" href="/sign-out">Sign Out</a>
               <% else %>
