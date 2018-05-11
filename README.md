@@ -22,8 +22,8 @@
 
 ## Screenshots:
 * Main Page:
-<img src="screenshots/screen1" alt="mobile demo" width="350">
+<img src="screenshots/screen1.png" alt="mobile demo" width="350">
 
 * New Post:
-<img src="screenshots/screen2" alt="mobile demo" width="350">
+<img src="screenshots/screen2.png" alt="mobile demo" width="350">
 
