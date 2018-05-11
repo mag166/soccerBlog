@@ -15,8 +15,15 @@
 * Users can delete their blog posts
 * Users can edit their account information and delete account
 
-##How to Use:
+## How to Use:
 * Heroku link: https://floating-garden-58367.herokuapp.com/
 * Username: minhalg
 * Password: 12345
+
+## Screenshots:
+* Main Page:
+<img src="screenshots/screen1" alt="mobile demo" width="350">
+
+* New Post:
+<img src="screenshots/screen2" alt="mobile demo" width="350">
 
